@@ -1,4 +1,4 @@
-tokyo.qatalk.dev {
+foobar.com {
 	root * /usr/share/caddy
 	file_server
 
