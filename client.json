@@ -32,14 +32,14 @@
             "protocol": "vless",
             "streamSettings": {
                 "tlsSettings": {
-                    "serverName": "tokyo.qatalk.dev",
+                    "serverName": "foobar.com",
                     "allowInsecure": false
                 },
                 "security": "tls",
                 "httpSettings": {
                     "path": "/live",
                     "host": [
-                        "tokyo.qatalk.dev"
+                        "foobar.com"
                     ]
                 },
                 "network": "h2"
@@ -48,7 +48,7 @@
             "settings": {
                 "vnext": [
                     {
-                        "address": "tokyo.qatalk.dev",
+                        "address": "foobar.com",
                         "users": [
                             {
                                 "encryption": "none",
