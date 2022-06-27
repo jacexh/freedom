@@ -13,7 +13,7 @@
                 "clients": [
                     {
                         "id": "389a0884-03b4-11ec-b72a-5254008f2fc8",
-                        "email": "jace.xh@gmail.com"
+                        "email": "free@foobar.com"
                     }
                 ],
                 "decryption": "none"
@@ -28,7 +28,7 @@
                 "httpSettings": {
                     "path": "/live",
                     "host": [
-                        "tokyo.qatalk.dev"
+                        "foobar.com"
                     ]
                 },
                 "quicSettings": {},
