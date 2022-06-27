@@ -1,0 +1,10 @@
+tokyo.qatalk.dev {
+	root * /usr/share/caddy
+	file_server
+
+	reverse_proxy /live v2ray:9988 {
+		transport http {
+			versions h2c
+		}
+	}
+}

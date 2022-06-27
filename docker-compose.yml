@@ -1,0 +1,35 @@
+version: "3.7"
+
+volumes:
+  caddy_data: {}
+  caddy_config:
+
+networks:
+  free_world:
+    driver: bridge
+
+services:
+  caddy:
+    image: caddy:2-alpine
+    restart: unless-stopped
+    container_name: caddy
+    ports:
+    - "443:443"
+    volumes:
+    - $PWD/Caddyfile:/etc/caddy/Caddyfile
+    - $PWD/site:/srv
+    - caddy_data:/data
+    - caddy_config:/config
+    networks:
+    - free_world
+  v2ray:
+    image: v2fly/v2fly-core
+    container_name: v2ray
+    restart: unless-stopped
+    volumes:
+    - $PWD/server.json:/etc/v2ray/config.json
+    - $PWD/v2ray_log:/var/log/v2ray
+    expose:
+    - 9988
+    networks:
+    - free_world
