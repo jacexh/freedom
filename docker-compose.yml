@@ -28,7 +28,6 @@ services:
     restart: unless-stopped
     volumes:
     - $PWD/server.json:/etc/v2ray/config.json
-    - $PWD/v2ray_log:/var/log/v2ray
     expose:
     - 9988
     networks:
