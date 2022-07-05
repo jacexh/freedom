@@ -1,8 +1,9 @@
 version: "3.7"
 
 volumes:
-  caddy_data: {}
+  caddy_data:
   caddy_config:
+  gogs_data:
 
 networks:
   free_world:
@@ -30,5 +31,13 @@ services:
     - $PWD/server.json:/etc/v2ray/config.json
     expose:
     - 9988
+    networks:
+    - free_world
+  gogs:
+    image: gogs/gogs:0.1.2
+    container_name: gogs
+    restart: unless-stopped
+    volumes:
+    - gogs_data:/data
     networks:
     - free_world

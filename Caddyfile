@@ -1,10 +1,9 @@
 foobar.com {
-	root * /usr/share/caddy
-	file_server
+	reverse_proxy / gogs:3000 {
+		transport
+	}
 
 	reverse_proxy /live v2ray:9988 {
-		transport http {
-			versions h2c
-		}
+		websocket
 	}
 }
