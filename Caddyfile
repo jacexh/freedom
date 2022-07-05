@@ -1,9 +1,11 @@
-foobar.com {
-	reverse_proxy / gogs:3000 {
-		transport
+foobar {
+	root * /usr/share/caddy
+	file_server
+
+	@websocket {
+		header Connection Upgrade
+		header Upgrade websocket
 	}
 
-	reverse_proxy /live v2ray:9988 {
-		websocket
-	}
+	reverse_proxy @websocket /live v2ray:9988
 }
